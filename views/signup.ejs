@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <title>Sign Up</title>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      html {
+        display:flex;
+        justify-content: center;
+        background-color: #212529;
+        font-family: 'Playfair Display';
+        height: 100%;
+      }
+
+      a:link, a:visited,  a:hover, a:active {
+        color: #000000;
+        text-decoration: none;
+      } 
+
+      body {
+        width: 1300px;
+      }
+      
+      /* NAV BAR ------------------------------------*/
+
+      nav {
+        width: 100%;
+        height: 20%;
+        background-color: #e9ecef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #logo {
+        display:flex;
+        align-items: center;
+      }
+
+      #navItems {
+        width: 100%;
+        display:flex;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      #headerHeader {
+        font-size:30px;
+        margin:10px;
+        margin-right:35px;
+      }
+
+      #DumbbellImgHeader {
+        width: 70px;
+        height: 60%;
+        margin:10px;
+      }
+
+      /* Login ---------------------------------------------- */
+      #login {
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+        height: 80vh;
+      }
+
+      #contents {
+        border-style: solid;
+        padding: 100px;
+        border-color: white;
+        border-width: thick;
+        color: white;
+        display:flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #loginContent {
+        display:flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      #loginHeader {
+        border-bottom: solid;
+        border-color: white;
+        border-width: thick;
+        margin-bottom: 10px;
+      }
+
+      #signUp, #a {
+        width: 100%;
+      }
+
+      #loginButton, #signUp {
+        width: 100%;
+        background-color: #adb5bd;
+        padding: 8px;
+      }
+
+      /* Footer --------------------------------------------- */
+      #footerContainer {
+        background-color:#e9ecef;
+        height: 15%;
+        grid-area:footer;
+        display: flex;
+        position:relative;
+        bottom: 0;
+        zoom: 0.78;
+      }
+
+      #logoAndName {
+        display:flex;
+        margin-top: 5px;
+        font-size: 15px;
+        align-items: center;
+      }
+
+      #DumbbellImgFooter {
+        position:relative;
+        top: 0;
+        width: 30px;
+        height: 20px;
+        max-height: 40%;
+        margin:10px;
+      }
+
+      #copyrightFooter {
+        position: absolute;
+        bottom: 0;
+        left: 2px;
+        font-size:15px;
+        margin:10px;
+      }
+
+      #linkedinImg {
+        position: absolute;
+        top:25%;
+        right:15px;
+        height:55%;
+        width:40px;
+        max-height: 50px;
+        max-width: 50px;
+        min-width: 50px;
+        min-height: 50px;
+      }
+
+      #gitHubImg {
+        position: absolute;
+        top:15%;
+        right:70px;
+        width:50px;
+        height:70%;
+        max-height: 68px;
+        max-width: 60px;
+        min-width: 60px;
+        min-height: 68px;
+      }
+
+      @media (min-width:768px)  {
+        html {
+          min-height: 800px;
+        }
+
+        nav {
+          font-size: 25px;
+        }
+
+        #navItems {
+          flex-direction:row;
+        }
+
+        #login {
+          height: 100vh;
+        }
+
+        #footerContainer {
+          zoom: 1;
+        }
+      }
+
+      @media (min-width: 992px) {
+      }
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAV BAR --------------------------------------------------------------------------------------------->
+    <nav>
+      <div id="logo">
+        <img src="https://i.imgur.com/950J1fr_d.webp?maxwidth=760&fidelity=grand" id="DumbbellImgHeader">
+        <h1 id="headerHeader"><a href="/homepage">Workout Planner</a></h1>
+      </div>
+
+      <div id="navItems">
+          <p><a href="/homepage"><b>HOME</b></a></p>
+          <p><a href="/homepage/workouts"><b>WORKOUTS</b></a></p>
+          <p><a href="/homepage/login"><b style="color:#6c757d;">LOGIN</b></a></p>
+      </div>
+    </nav>
+
+    <!-- Login ----------------------------------------------------------------------------------------------->
+    <div id="login">
+      <div id="contents">
+        <div id="loginContent">
+          <div id="loginHeader">
+            <h1>Sign Up</h1>
+          </div>
+          <div id="loginEmail">
+            <div id="loginEmailHeader">
+              <h3>Email:</h3>
+            </div>
+            <div id="loginEmailInput">
+              <input id="loginInput"></input>
+            </div>
+          </div>
+          <div id="loginPassword">
+            <div id="loginPasswordHeader">
+              <h3>Password:</h3>
+            </div>
+            <div id="loginPasswordInput">
+              <input id="loginInput"></input>
+            </div>
+          </div>
+          <button id="loginButton">SIGN UP</button>
+          <a id="a" href="/homepage/login"><button id="signUp">CANCEL</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer ---------------------------------------------------------------------------------------------->
+    <div id="footerContainer">
+      <div id="footerHeader">
+        <div id="logoAndName">
+          <img src="https://i.imgur.com/950J1fr_d.webp?maxwidth=760&fidelity=grand" id="DumbbellImgFooter">
+          <h1 id="footerHeader">Workout Planner</h1>
+          </div>
+        <img src="https://i.imgur.com/0hmNIqq_d.webp?maxwidth=760&fidelity=grand" id="linkedinImg" onclick="linkedinButton()">
+        <img src="https://i.imgur.com/q4EQ4Me_d.webp?maxwidth=760&fidelity=grand" id="gitHubImg" onclick="gitHubButton()">
+        <p id="copyrightFooter">@2022 WorkoutPlanner, M.O. All Rights Reserved.</p>
+      </div>
+    </div>
+
+  </body>
+</html>
