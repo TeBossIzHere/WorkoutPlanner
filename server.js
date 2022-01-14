@@ -28,8 +28,13 @@ app.get('/homepage' , (req, res) => {
 });
 
 app.get('/homepage/workouts', (req, res) => {
-  res.render('workouts.ejs');
+  Workout.find({}, (error, allWorkouts) => {
+		res.render('workouts.ejs', {
+			workouts : allWorkouts,
+		});
+	});
 });
+
 
 app.get('/homepage/login', (req, res) => {
   res.render('login.ejs');
@@ -45,16 +50,34 @@ app.get('/homepage/new', (req, res) =>{
 });
 
 // Delete Route
-app.delete("/homepage/:id", (req, res) => {
+app.delete("/workouts/:id", (req, res) => {
   Workout.findByIdAndRemove(req.params.id, (err, data) => {
-    res.redirect("/homepage");
+    res.redirect("/homepage/workouts");
   });
 });
 
 // Create Route
-app.post('/homepage', (req, res) => {
+app.post('/workouts', (req, res) => {
+  // let exerciseArr = [];
+  // let repsAndSetsArr = [];
+  // let index = 0;
+  // for (var key in object) {
+  //   if (key.toString() === `exercise`) {
+  //     for (let i = 0; i < key.length; i++) {
+  //       if (object[key][i] != null) {
+  //         exerciseArr.push(object[key][i]);
+  //         repsAndSetsArr.push(object["repsAndSets"][i]);
+  //       }
+  //     }
+  //   }
+  //   index = index + 1;
+  // }
+  // console.log(exerciseArr);
+  // console.log(repsAndSetsArr);
+  // object["exercise"] = exerciseArr;
+  // console.log(object);
   Workout.create(req.body, (error, createdWorkout) => {
-    res.redirect('/homepage');
+    res.redirect('/homepage/workouts');
   });
 });
 
@@ -62,7 +85,7 @@ app.post('/homepage', (req, res) => {
 // Update Route
 
 // Edit Route
-app.get("/homepage/:id/edit", (req, res) => {
+app.get("/homepage/workouts/:id/edit", (req, res) => {
   Workout.findById(req.params.id, (error, foundWorkout) => {
     res.render("edit.ejs", {
       workout : foundWorkout,
@@ -70,20 +93,21 @@ app.get("/homepage/:id/edit", (req, res) => {
   });
 });
 
-app.put("/homepage/:id/edit", (req, res) => {
+app.put("/homepage/workouts/:id/edit", (req, res) => {
+  console.log(req.body);
   Workout.findByIdAndUpdate(
     req.params.id,
     req.body,
     {new: true,},
     (error, updatedWorkout) => {
-      res.redirect(`/homepage/${req.params.id}`)
+      res.redirect(`/homepage/workouts/${req.params.id}`);
     });
 });
 
 // Show route
-app.get('/homepage/:id', (req, res) => {
+app.get('/homepage/workouts/:id', (req, res) => {
 	Workout.findById(req.params.id, (err, foundWorkout) => {
-		res.render('show.ejs', {
+		res.render('workout-view.ejs', {
 			workout: foundWorkout,
 		});
 	});
