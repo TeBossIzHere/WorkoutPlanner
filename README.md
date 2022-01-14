@@ -35,7 +35,7 @@ Link to Trello board: https://trello.com/b/CYiEYarW/project-two-workout-planner
   
  # Next Steps
  <ul>
-  <li>Add "LOGIN" and "SIGN UP" functionality.<li>
+  <li>Add "LOGIN" and "SIGN UP" functionality.</li>
   <li>Personalized workouts in private account using "LOGIN" system.</li>
   <li>Add a workout API to recieve stock information and photos of exercises.</li>
   <li>Add a "GLOBAL" view section to see publicly published user workouts.</li>
