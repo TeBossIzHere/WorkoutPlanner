@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/ef10e68d47.js" crossorigin="anonymous"></script>
+    <title><%= workout.name %> | View</title>
+    <style>
+      * {
+        margin: 0;
+      }
+
+      html {
+        display:flex;
+        justify-content: center;
+        background-color: #212529;
+        font-family: 'Playfair Display';
+      }
+
+      a:link, a:visited,  a:hover, a:active {
+        color: #000000;
+        text-decoration: none;
+      } 
+
+      body {
+        width: 1300px;
+      }
+      
+      /* NAV BAR ------------------------------------*/
+
+      nav {
+        width: 100%;
+        height: 15%;
+        background-color: #e9ecef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #logo {
+        display:flex;
+        align-items: center;
+      }
+
+      #navItems {
+        width: 100%;
+        display:flex;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      #headerHeader {
+        font-size:30px;
+        margin:10px;
+        margin-right:35px;
+      }
+
+      #DumbbellImgHeader {
+        width: 70px;
+        height: 60%;
+        margin:10px;
+      }
+
+      /* Workout ---------------------------------------------- */
+      #mainContainer {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+      }
+
+      #workoutHeader {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        color: #FFFAFB;
+        border-style: solid;
+        border-color: #FFFAFB;
+        border-width: thick;
+        margin: 50px;
+        width: 80%;
+        height 100%;
+        font-size: 25px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        zoom: 0.8;
+      }
+
+       #userWorkouts {
+        display:flex;
+        flex-direction:row;
+        align-items: center;
+        width: 100%;
+        border-bottom: solid;
+        border-width: thick;
+        border-color: white;
+        zoom: 0.45;
+      }
+
+      #userWorkoutHeader {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        color: #FFFAFB;
+        width: 80%;
+        left: 150px;
+      }
+
+      #userWorkoutNumber {
+        display:flex;
+        width: 10%;
+        display:flex;
+        justify-content:start;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        padding-left: 0;
+      }
+
+      #workoutContent {
+        display:flex;
+        align-items: center;
+        width: 57%;
+        border-bottom: solid;
+        border-color: white;
+        border-width: thick;
+        padding: 20px;
+        color: white;
+        letter-spacing: 2px;
+      }
+
+      #exerciseContent {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        padding: 20px;
+        color: white;
+        letter-spacing: 2px;
+      }
+
+      #userExercises {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      #buttons {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 60%;
+        width: 90%;
+      }
+
+      #viewButton {
+        width: 100%;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        background-color: #6c757d;
+        color: white;
+        height: 30%;
+        border-style: solid;
+        border-radius: 15%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        right: 0;
+      }
+
+      #buttonbutton {
+        background: none;
+	      color: inherit;
+	      border: none;
+	      padding: 0;
+	      font: inherit;
+	      cursor: pointer;
+	      outline: inherit;
+      }
+
+      #backButtonHeader {
+        display:flex;
+        align-items: center;
+        justify-content:space-around;
+        color: #FFFAFB;
+        border-style: solid;
+        border-color: #FFFAFB;
+        border-width: thick;
+        width: 100%;
+        height 100%;
+        font-size: 15px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-right: 45px;
+        padding-left: 45px;
+      }
+
+      #backButton {
+        width: 92.5%;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        zoom: 0.65
+      }
+
+      /* Footer --------------------------------------------- */
+      #footerContainer {
+        background-color:#e9ecef;
+        min-height: 10%;
+        grid-area:footer;
+        display: flex;
+        position:relative;
+        bottom: 0;
+        zoom: 0.78;
+      }
+
+      #logoAndName {
+        display:flex;
+        margin-top: 5px;
+        font-size: 15px;
+        align-items: center;
+      }
+
+      #DumbbellImgFooter {
+        position:relative;
+        top: 0;
+        width: 30px;
+        height: 20px;
+        max-height: 40%;
+        margin:10px;
+      }
+
+      #copyrightFooter {
+        position: absolute;
+        bottom: 0;
+        left: 2px;
+        font-size:15px;
+        margin:10px;
+      }
+
+      #linkedinImg {
+        position: absolute;
+        top:25%;
+        right:15px;
+        height:55%;
+        width:40px;
+        max-height: 50px;
+        max-width: 50px;
+        min-width: 50px;
+        min-height: 50px;
+      }
+
+      #gitHubImg {
+        position: absolute;
+        top:15%;
+        right:70px;
+        width:50px;
+        height:70%;
+        max-height: 68px;
+        max-width: 60px;
+        min-width: 60px;
+        min-height: 68px;
+      }
+
+      @media (min-width:768px)  {
+        html {
+        }
+
+        nav {
+          font-size: 25px;
+        }
+
+        #navItems {
+          flex-direction:row;
+        }
+
+        #workoutHeader {
+        zoom: 1;
+        }
+
+        #backButton {
+          width: 95%;
+          zoom: 1;
+        }
+
+        #userWorkout {
+          zoom: 1;
+        }
+
+        #exerciseContent {
+          width: 57%;
+        }
+
+        #userWorkouts {
+          zoom: 0.8;
+        }
+
+        #createWorkoutHeader {
+          padding-top: 50px;
+          padding-bottom: 50px;
+          padding-right: 25px;
+          padding-left: 25px;
+          zoom: 1;
+        }
+
+        #footerContainer {
+          zoom: 1;
+        }
+      }
+
+      @media (min-width: 992px) {
+      }
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAV BAR --------------------------------------------------------------------------------------------->
+    <nav>
+      <div id="logo">
+        <img src="https://i.imgur.com/950J1fr_d.webp?maxwidth=760&fidelity=grand" id="DumbbellImgHeader">
+        <h1 id="headerHeader"><a href="/homepage">Workout Planner</a></h1>
+      </div>
+
+      <div id="navItems">
+          <p><a href="/homepage"><b>HOME</b></a></p>
+          <p><a href="/homepage/workouts"><b style="color:#6c757d;">WORKOUTS</b></a></p>
+          <p><a href="/homepage/login"><b>LOGIN</b></a></p>
+      </div>
+    </nav>
+
+    <!-- Workout ----------------------------------------------------------------------------------------------->
+    <div id="mainContainer">
+      <div id="workoutHeader">
+        <h1><%= workout.name %></h1>
+      </div>
+      <div id="workoutHeader" style="width: 70%;">
+        <h3 style="letter-spacing: 5px;font-style: italic;">DESCRIPTION</h3>
+      </div>
+      <div id="workoutContent">
+        <p> <%= workout.description %></p>
+      </div>
+      <div id="workoutHeader" style="width: 70%;">
+        <h3 style="letter-spacing: 5px;font-style: italic;">EXERCISES</h3>
+      </div>
+      <div id="exerciseContent">
+        <% for (let i = 0; i < workout.exercises.length; i++) { %>
+          <div id="userWorkouts">
+            <div id="userWorkoutNumber">
+              <h1 style="width: 100%;">#<%= i + 1 %></h1>
+            </div>
+            <div id="userExercises">
+              <h1 style="zoom: 0.6;border-right: solid; padding-right: 100px;"><%= workout.exercises[i] %></h1>
+              <h1 style="zoom: 0.6;padding-left: 100px;"><%= workout.repsAndSets[i] %></h1>
+            </div>
+          </div>
+			  <% } %>
+      </div>
+      <a id="backButton" href="/homepage/workouts">
+        <div id="backButtonHeader" style="background-color:#6c757d; margin: 20px;">
+          <h1>BACK</h1>
+        </div>
+      </a>
+      <div id="buttons">
+        <form id="backButton" action="/homepage/workouts/<%= workout._id %>/edit" method="GET"> 
+          <input type="submit" value="EDIT" id="backButtonHeader" style="background-color:#e09f3e;" />
+        </form>
+        <form id="backButton" action="/workouts/<%= workout._id %>?_method=DELETE" method="POST">
+          <input type="submit" value="DELETE" id="backButtonHeader" style="background-color:#e63946;"/> 
+        </form>
+      </div>
+    </div>
+
+
+    <!-- Footer ---------------------------------------------------------------------------------------------->
+    <div id="footerContainer">
+      <div id="footerHeader">
+        <div id="logoAndName">
+          <img src="https://i.imgur.com/950J1fr_d.webp?maxwidth=760&fidelity=grand" id="DumbbellImgFooter">
+          <h1 id="footerHeader">Workout Planner</h1>
+          </div>
+        <img src="https://i.imgur.com/0hmNIqq_d.webp?maxwidth=760&fidelity=grand" id="linkedinImg" onclick="linkedinButton()">
+        <img src="https://i.imgur.com/q4EQ4Me_d.webp?maxwidth=760&fidelity=grand" id="gitHubImg" onclick="gitHubButton()">
+        <p id="copyrightFooter">@2022 WorkoutPlanner, M.O. All Rights Reserved.</p>
+      </div>
+    </div>
+
+  </body>
+  <script>
+   function linkedinButton() {
+      window.open("https://www.linkedin.com/in/muzaffer-ozen/", "_blank").focus();
+    }
+
+    function gitHubButton() {
+      window.open("https://github.com/TeBossIzHere/WorkoutPlanner", "_blank").focus();
+    }
+  </script>
+</html>
