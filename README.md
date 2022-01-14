@@ -8,3 +8,14 @@ and easy to use navigation, you can use <b>Workout Planner</b> on the go. Curren
 workouts within your own profile.
 
 # Screenshots
+
+# Technologies Used
+<ol>
+  <li>Node.js</li>
+  <li>Express.js</li>
+  <li>MongoDB</li>
+  <li>Mongoose</li>
+  <li>Javascript</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  </ol>
