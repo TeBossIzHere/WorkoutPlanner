@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/ef10e68d47.js" crossorigin="anonymous"></script>
     <title>Workouts</title>
     <style>
       * {
@@ -16,7 +17,6 @@
         justify-content: center;
         background-color: #212529;
         font-family: 'Playfair Display';
-        height: 100%;
       }
 
       a:link, a:visited,  a:hover, a:active {
@@ -33,6 +33,7 @@
       nav {
         width: 100%;
         height: 20%;
+        max-height: 25%;
         background-color: #e9ecef;
         display: flex;
         justify-content: center;
@@ -72,14 +73,14 @@
         display:flex;
         flex-direction: column;
         align-items: center;
-        height: 850px;
+        height: 100%;
         width: 100%;
       }
 
       #workoutHeader {
         display:flex;
         align-items: center;
-        justify-content:center;
+        justify-content: center;
         color: #FFFAFB;
         border-style: solid;
         border-color: #FFFAFB;
@@ -90,12 +91,118 @@
         font-size: 25px;
         padding-top: 50px;
         padding-bottom: 50px;
+        zoom: 0.8;
+      }
+
+      #userWorkouts {
+        display:flex;
+        align-items: center;
+        width: 100%;
+        border-bottom: solid;
+        border-width: thick;
+        border-color: white;
+        zoom: 0.6;
+      }
+
+      #userWorkoutHeader {
+        display:flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        color: #FFFAFB;
+        width: 80%;
+        left: 150px;
+      }
+
+      #userWorkoutNumber {
+        display:flex;
+        width: 100%;
+        display:flex;
+        justify-content:start;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        padding-left: 0;
+      }
+
+      #userWorkoutName {
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        width: 100%;
+      }
+
+      #buttons {
+        display:flex;
+        align-items: center;
+        justify-content: end;
+        height: 60%;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 50px;
+        padding-right: 0;
+      }
+
+      #viewButton {
+        width: 15%;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        background-color: #6c757d;
+        color: white;
+        height: 30%;
+        border-style: solid;
+        border-radius: 15%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        right: 0;
+      }
+
+      #buttonbutton {
+        background: none;
+	      color: inherit;
+	      border: none;
+	      padding: 0;
+	      font: inherit;
+	      cursor: pointer;
+	      outline: inherit;
+      }
+
+      #createWorkoutHeader {
+        display:flex;
+        align-items: center;
+        justify-content:space-around;
+        color: #FFFAFB;
+        border-style: solid;
+        border-color: #FFFAFB;
+        border-width: thick;
+        margin: 50px;
+        width: 80%;
+        height 100%;
+        font-size: 15px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-right: 45px;
+        padding-left: 45px;
+      }
+
+      #createButton {
+        width: 92.5%;
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        zoom: 0.65
       }
 
       /* Footer --------------------------------------------- */
       #footerContainer {
         background-color:#e9ecef;
         height: 15%;
+        max-height: 20%;
         grid-area:footer;
         display: flex;
         position:relative;
@@ -153,7 +260,6 @@
 
       @media (min-width:768px)  {
         html {
-          min-height: 800px;
         }
 
         nav {
@@ -164,8 +270,25 @@
           flex-direction:row;
         }
 
+        #workoutHeader {
+        zoom: 1;
+        }
+
         #createButton {
           width: 95%;
+          zoom: 1;
+        }
+
+        #userWorkouts {
+          zoom: 1;
+        }
+
+        #createWorkoutHeader {
+          padding-top: 50px;
+          padding-bottom: 50px;
+          padding-right: 25px;
+          padding-left: 25px;
+          zoom: 1;
         }
 
         #footerContainer {
@@ -199,9 +322,28 @@
       <div id="workoutHeader">
         <h1>Your Workouts</h1>
       </div>
-      <div id="userWorkoutsHeader">
-        <div id="userWorkouts"></div>
+      <div id="userWorkoutHeader">
+        <% let number = 0;%>
+        <% workouts.forEach(workout => { %>
+          <div id="userWorkouts">
+            <div id="userWorkoutNumber">
+              <h1>#<%= number + 1 %></h1>
+            </div>
+            <div id="userWorkoutName">
+              <h1 style="zoom: 0.6;"><%= workout.name %></h1>
+              <% number = number + 1; %>
+            </div>
+            <div id="buttons">
+              <a href="/homepage/workouts/<%= workout._id %>" id="viewButton"><div id="buttonbutton"><i class="fas fa-glasses"></i></div></a>
+            </div>
+          </div>
+			<% }); %>
       </div>
+      <a id="createButton" href="/homepage/new">
+        <div id="createWorkoutHeader" style="background-color: #6c757d;">
+          <h1>CREATE A WORKOUT</h1>
+        </div>
+      </a>
     </div>
 
 
@@ -219,4 +361,13 @@
     </div>
 
   </body>
+  <script>
+  function linkedinButton() {
+    window.open("https://www.linkedin.com/in/muzaffer-ozen/", "_blank").focus();
+  }
+
+  function gitHubButton() {
+    window.open("https://github.com/TeBossIzHere/WorkoutPlanner", "_blank").focus();
+  }
+  </script>
 </html>
