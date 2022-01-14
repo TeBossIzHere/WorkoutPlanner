@@ -8,6 +8,12 @@ and easy to use navigation, you can use <b>Workout Planner</b> on the go. Curren
 workouts within your own profile.
 
 # Screenshots
+![Home Page](https://i.imgur.com/SNPrk7o_d.webp?maxwidth=1520&fidelity=grand)
+![Workout Page](https://i.imgur.com/CnYGKPk_d.webp?maxwidth=1520&fidelity=grand)
+![Create Page](https://i.imgur.com/Dd0iCXB_d.webp?maxwidth=760&fidelity=grand)
+![Edit Page](https://i.imgur.com/t9IIMqe_d.webp?maxwidth=760&fidelity=grand)
+![Login Page](https://i.imgur.com/hmSEqBL_d.webp?maxwidth=760&fidelity=grand)
+
 
 # Technologies Used
 <ul>
