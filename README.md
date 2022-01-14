@@ -10,12 +10,34 @@ workouts within your own profile.
 # Screenshots
 
 # Technologies Used
-<ol>
-  <li>Node.js</li>
-  <li>Express.js</li>
-  <li>MongoDB</li>
-  <li>Mongoose</li>
+<ul>
+  <li><b>Node.js</b></li>
+  <li><b>Express.js</b></li>
+  <li><b>MongoDB</b></li>
+  <li><b>Mongoose</b></li>
   <li>Javascript</li>
   <li>HTML</li>
   <li>CSS</li>
+  </ul>
+
+# Getting Started
+Link to project: https://workout-planner-muzaffer-ozen.herokuapp.com/homepage
+Link to Trello board: https://trello.com/b/CYiEYarW/project-two-workout-planner
+<ol>
+  <li>Read "ABOUT" in homepage for project context.<li>
+  <li>Click "WORKOUTS" to view created workouts.<li>
+  <li>In "WORKOUTS", click view icon to get information on selected workout.<li>
+  <li>In "WORKOUTS", click "CREATE A WORKOUT" to be prompted to workout creation.<li>
+  <li>In view of a workout, you are able to see details and exercises of said workout.<li>
+  <li>In view of a workout, click "EDIT" to be prompted to edit said workout.<li>
+  <li>In view of a workout, click "DELETE" to delete said workout.<li>
   </ol>
+  
+ # Next Steps
+ <ul>
+  <li>Add "LOGIN" and "SIGN UP" functionality.<li>
+  <li>Personalized workouts in private account using "LOGIN" system.<li>
+  <li>Add a workout API to recieve stock information and photos of exercises.<li>
+  <li>Add a "GLOBAL" view section to see publicly published user workouts.<li>
+  <li>Add functionality for users to publish workouts globally.<li>
+  </ul>
