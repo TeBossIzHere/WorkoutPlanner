@@ -11,8 +11,8 @@ workouts within your own profile.
 
 # Technologies Used
 <ul>
-  <li><b>Node.js</b></li>
-  <li><b>Express.js</b></li>
+  <b>Node.js</b>
+  <b>Express.js</b>
   <li><b>MongoDB</b></li>
   <li><b>Mongoose</b></li>
   <li>Javascript</li>
