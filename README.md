@@ -27,8 +27,8 @@ workouts within your own profile.
   </ul>
 
 # Getting Started
-Link to project: https://workout-planner-muzaffer-ozen.herokuapp.com/homepage
-Link to Trello board: https://trello.com/b/CYiEYarW/project-two-workout-planner
+- Link to project: https://workout-planner-muzaffer-ozen.herokuapp.com/homepage
+- Link to Trello board: https://trello.com/b/CYiEYarW/project-two-workout-planner
 <ol>
   <li>Read "ABOUT" in homepage for project context.</li>
   <li>Click "WORKOUTS" to view created workouts.</li>
