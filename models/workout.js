@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongooe = require('mongoose');
 
 const WorkoutSchema = new mongoose.Schema({
 	name: String,
